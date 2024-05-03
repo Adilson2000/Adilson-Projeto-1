@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante de Porções</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sugestões de Comidas e Bebidas</h1>
+        <form id="suggestionsForm">
+            <div class="form-group">
+                <label for="food">Sugestão de Comida:</label>
+                <input type="text" id="food" name="food" placeholder="Digite sua sugestão de comida">
+            </div>
+            <div class="form-group">
+                <label for="drink">Sugestão de Bebida:</label>
+                <input type="text" id="drink" name="drink" placeholder="Digite sua sugestão de bebida">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar Sugestões">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('suggestionsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var food = document.getElementById('food').value;
+            var drink = document.getElementById('drink').value;
+            // Aqui você pode enviar os dados para o backend para processamento ou armazenamento no banco de dados
+            console.log('Sugestão de comida:', food);
+            console.log('Sugestão de bebida:', drink);
+            alert('Sugestões enviadas com sucesso!');
+            // Limpar os campos após o envio
+            document.getElementById('food').value = '';
+            document.getElementById('drink').value = '';
+        });
+    </script>
+</body>
+</html>
